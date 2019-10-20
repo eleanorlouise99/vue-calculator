@@ -24,7 +24,7 @@
 
         <div @click="append('0')" class="btn zero">0</div>
         <div @click="dot" class="btn">.</div>
-        <div class="btn operator">=</div>
+        <div @click="equals" class="btn operator">=</div>
     </div>
 </template>
 
