@@ -57,26 +57,33 @@ export default {
                 this.append('.');
             }
         },
-        divide(){
-            this.operator = (a, b) => a / b;
+        setPrevious() {
             this.previous = this.current;
             this.operatorClicked = true;
+        }
+        divide(){
+            this.operator = (a, b) => a / b;
+            this.setPrevious();
         },
         times(){
             this.operator = (a, b) => a * b;
-            this.previous = this.current;
-            this.operatorClicked = true;
+            this.setPrevious();
         },
         minus(){
             this.operator = (a, b) => a - b;
-            this.previous = this.current;
-            this.operatorClicked = true;
+            this.setPrevious();
         },
         add(){
             this.operator = (a, b) => a + b;
-            this.previous = this.current;
-            this.operatorClicked = true;
+            this.setPrevious();
         },
+        equals() {
+            this.current = `${this.operator(
+                parseFloat(this.current),
+                parseFloat(this.previous)
+            )}`;
+            this.previous = null;
+        }
 
     }
 }
