@@ -32,7 +32,10 @@
 export default {
     data() {
         return {
+            previous: null,
             current: '', 
+            operator: null,
+            operatorClicked: null,
         }
     },
     methods: {
@@ -55,17 +58,26 @@ export default {
             }
         },
         divide(){
-
+            this.operator = (a, b) => a / b;
+            this.previous = this.current;
+            this.operatorClicked = true;
         },
         times(){
-
+            this.operator = (a, b) => a * b;
+            this.previous = this.current;
+            this.operatorClicked = true;
         },
         minus(){
-
+            this.operator = (a, b) => a - b;
+            this.previous = this.current;
+            this.operatorClicked = true;
         },
         add(){
+            this.operator = (a, b) => a + b;
+            this.previous = this.current;
+            this.operatorClicked = true;
+        },
 
-        }
     }
 }
 </script>
